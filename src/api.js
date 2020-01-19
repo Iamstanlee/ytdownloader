@@ -20,6 +20,7 @@ app.get('/download', (req, res) => {
    } else {
       res.send({
          status: 400,
+
          err: 'Invalid URL'
       });
    }
