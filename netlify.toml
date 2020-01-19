@@ -1,0 +1,23 @@
+[build]
+  functions = "functions"
+
+[[redirects]]
+  from = "/"
+  to = "https://www.ytconvertor.com/downloader.html"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
+
+[[redirects]]
+  from = "/mp3-converter"
+  to = "https://www.ytconvertor.com/mp3-converter.html"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
+
+[[redirects]]
+  from = "/downloader"
+  to = "https://www.ytconvertor.com/downloader.html"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}

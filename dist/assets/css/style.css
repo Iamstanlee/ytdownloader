@@ -1,0 +1,51 @@
+* {
+ box-sizing: border-box;
+ font-family: 'Ubuntu', sans-serif;
+}
+.dropdown-content {
+ /* display: none; */
+ position: absolute;
+ background-color: #f9f9f9;
+ max-width: 500px;
+ height: 300px;
+ box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+ z-index: 1;
+}
+.dropdown-content span {
+ color: black;
+ padding: 8px 16px;
+ text-decoration: none;
+ display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content span:hover {
+ background-color: #f1f1f1;
+ cursor: pointer;
+}
+.terms-section {
+ padding: 50px;
+}
+.about-section {
+ padding: 50px;
+}
+.contact-section {
+ padding: 50px;
+}
+.faq-section {
+ padding: 50px;
+}
+@media (max-width: 576px) {
+ .faq-section {
+  padding: 8px;
+ }
+ .terms-section {
+  padding: 8px;
+ }
+ .contact-section {
+  padding: 8px;
+ }
+ .about-section {
+  padding: 8px;
+ }
+}

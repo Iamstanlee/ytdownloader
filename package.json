@@ -1,0 +1,21 @@
+{
+ "name": "ytconvertot",
+ "version": "1.0.0",
+ "description": "youtube video downloader, mp4 to mp3 converter",
+ "main": "app.js",
+ "scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "start": "./node_modules/.bin/netlify-lambda serve src",
+  "build": "./node_modules/.bin/netlify-lambda build src",
+  "do": "node src/api.js"
+ },
+ "author": "",
+ "license": "ISC",
+ "dependencies": {
+  "cors": "^2.8.5",
+  "express": "^4.17.1",
+  "netlify-lambda": "^1.6.3",
+  "serverless-http": "^2.3.0",
+  "ytdl-core": "^1.0.6"
+ }
+}
