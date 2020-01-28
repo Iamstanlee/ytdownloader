@@ -2,13 +2,14 @@ const express = require('express');
 const cors = require('cors');
 const ytdl = require('ytdl-core');
 const app = express();
-const path = require('path');
+const router = express.Router();
+const serverless = require('serverless-http');
 // api routes
 app.use(cors());
 app.listen(process.env.PORT || 4000, function() {
    console.log('node js server is running at', process.env.PORT);
 });
-app.get('/download', (req, res) => {
+router.get('/download', (req, res) => {
    var URL = req.query.URL;
    if (validateURL(URL)) {
       ytdl.getInfo(URL, (err, info) => {
@@ -20,12 +21,11 @@ app.get('/download', (req, res) => {
    } else {
       res.send({
          status: 400,
-
          err: 'Invalid URL'
       });
    }
 });
-app.get('/mp3Info', (req, res) => {
+router.get('/mp3Info', (req, res) => {
    var URL = req.query.URL;
    if (validateURL(URL)) {
       ytdl.getInfo(URL, (err, info) => {
@@ -55,3 +55,6 @@ app.get('/downloadMp3', (req, res) => {
 function validateURL(url) {
    return ytdl.validateURL(url);
 }
+
+app.use('/.netlify/functions/api', router);
+module.exports.handler = serverless(app);
